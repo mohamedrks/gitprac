@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: frontend-ingress
+    namespace:  dev
+spec:
+    rules:
+    - http:
+        paths:
+        - path: /api
+          backend:
+            serviceName: hello-service
+            servicePort: 80
