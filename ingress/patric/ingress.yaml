@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-echo1
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: echo1
+          servicePort: 80
