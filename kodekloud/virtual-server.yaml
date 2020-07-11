@@ -1,0 +1,13 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: cafe
+spec:
+  upstreams:
+  - name: tea
+    service: mysample-service
+    port: 80
+  routes:
+  - path: /tea
+    action:
+      pass: tea
